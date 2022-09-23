@@ -1,0 +1,17 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "driver": "PostgreSQL",
+      "name": "postgre_local",
+      "database": "testdb",
+      "username": "test",
+      "password": "test"
+    }
+  ],
+  "go.formatTool": "goimports",
+  "go.useLanguageServer": true,
+  "go.toolsEnvVars": {"GOFLAGS": "-tags=integration"}
+}

@@ -1,0 +1,3 @@
+# Including Database confidential data
+.env
+sqlboiler.toml
