@@ -13,6 +13,12 @@ import (
 	"github.com/volatiletech/sqlboiler/v4/queries/qm"
 )
 
+/*
+This contains Database information which is in the infra layer,
+so this breaks dependency inversion principal.
+To solve this problem, Add sql handler to this gateways (adaptors) layer.
+*/
+
 type UserGateway struct {
 	database.SqlHandler
 }

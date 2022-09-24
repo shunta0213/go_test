@@ -16,7 +16,7 @@ func (u *UserPresenter) AddUser(ctx context.Context, user *models.User, err erro
 	return entities_user, err
 }
 
-func OutPutUser(ctx context.Context, user *models.User, err error) (*entities.User, error) {
+func (u *UserPresenter) OutPutUser(ctx context.Context, user *models.User, err error) (*entities.User, error) {
 	entities_user := &entities.User{}
 	copier.Copy(entities_user, user)
 	return entities_user, err

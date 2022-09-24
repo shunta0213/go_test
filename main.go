@@ -6,6 +6,7 @@ import (
 
 	// For sql, postgres driver
 
+	"github.com/shunta0213/go_test/infrastructures"
 	"github.com/shunta0213/go_test/models"
 )
 
@@ -27,6 +28,8 @@ func main() {
 	// }
 
 	// router.Run("localhost:8080")
+
+	infrastructures.Router.Run()
 
 }
 
