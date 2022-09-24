@@ -15,7 +15,10 @@ func init() {
 
 	userController := controllers.NewUserController(*database.NewSqlHandler())
 
-	router.GET("/user/:id", func(c *gin.Context) { userController.GetUser(context.TODO(), c) })
+	router.GET("/users/all", func(ctx *gin.Context) { userController.GetAllUser(context.TODO(), ctx) })
+	router.GET("/users/range", func(ctx *gin.Context) { userController.GetRangeUsers(context.TODO(), ctx) })
+	router.GET("/users", func(ctx *gin.Context) { userController.GetUsers(context.TODO(), ctx) })
+	router.GET("/user/:id", func(ctx *gin.Context) { userController.GetUser(context.TODO(), ctx) })
 
 	Router = router
 }

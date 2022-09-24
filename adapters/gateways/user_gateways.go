@@ -120,3 +120,22 @@ func (gateways *UserGateway) GetRangeUsers(ctx context.Context, start_id int, en
 
 	return users, nil
 }
+
+/*
+When you get all users
+*/
+
+func (gateways *UserGateway) GetAllUser(ctx context.Context) ([]*models.User, error) {
+
+	users, err := models.Users().All(ctx, gateways.Conn)
+
+	if err != nil {
+		return nil, err
+	}
+
+	if users == nil {
+		users = []*models.User{}
+	}
+
+	return users, nil
+}
