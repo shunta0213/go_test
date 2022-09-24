@@ -6,9 +6,12 @@ import (
 	"os"
 
 	"github.com/joho/godotenv"
+	_ "github.com/lib/pq"
 )
 
-var Db *sql.DB
+type SqlHandler struct {
+	Conn *sql.DB
+}
 
 func getDatabaseInfo() string {
 	err := godotenv.Load(".env")
@@ -25,11 +28,14 @@ func getDatabaseInfo() string {
 	return dns
 }
 
-func init() {
-	var err error
-	Db, err = sql.Open("postgres", getDatabaseInfo())
+func NewSqlHandler() *SqlHandler {
+	conn, err := sql.Open("postgres", getDatabaseInfo())
 
 	if err != nil {
 		panic(err)
 	}
+
+	sqlHandler := new(SqlHandler)
+	sqlHandler.Conn = conn
+	return sqlHandler
 }

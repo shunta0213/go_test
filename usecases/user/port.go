@@ -4,6 +4,7 @@ import (
 	"context"
 
 	"github.com/shunta0213/go_test/entities"
+	"github.com/shunta0213/go_test/models"
 )
 
 /*
@@ -20,14 +21,14 @@ type UserInputPort interface {
 Implement: Presenter, User: Interactor
 */
 type UserOutputPort interface {
-	AddUser(ctx context.Context, user *entities.User, err error) (*entities.User, error)
-	OutPutUser(ctx context.Context, user *entities.User, err error) (*entities.User, error)
-	OutputUsers(ctx context.Context, users *entities.Users, err error) (*entities.Users, error)
+	AddUser(ctx context.Context, user *models.User, err error) (*entities.User, error)
+	OutPutUser(ctx context.Context, user *models.User, err error) (*entities.User, error)
+	OutputUsers(ctx context.Context, users []*models.User, err error) (*entities.Users, error)
 }
 
 type UserRepository interface {
-	AddUser(ctx context.Context, user *entities.User) (*entities.User, error)
-	GetUser(ctx context.Context, id int) (*entities.User, error)
-	GetRangeUsers(ctx context.Context, start_id int, end_id int) (*entities.Users, error)
-	GetUsers(ctx context.Context, id ...int) (*entities.Users, error)
+	AddUser(ctx context.Context, user *entities.User) (*models.User, error)
+	GetUser(ctx context.Context, id int) (*models.User, error)
+	GetRangeUsers(ctx context.Context, start_id int, end_id int) ([]*models.User, error)
+	GetUsers(ctx context.Context, ids ...int) ([]*models.User, error)
 }

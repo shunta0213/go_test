@@ -12,11 +12,11 @@ type UserInteractor struct {
 }
 
 func (u *UserInteractor) AddUser(ctx context.Context, user *entities.User) (*entities.User, error) {
-	user, err := u.Repository.AddUser(ctx, user)
+	user_repo, err := u.Repository.AddUser(ctx, user)
 	if err != nil {
 		return u.OutputPort.AddUser(ctx, nil, err)
 	}
-	return u.OutputPort.AddUser(ctx, user, nil)
+	return u.OutputPort.AddUser(ctx, user_repo, nil)
 }
 
 func (u *UserInteractor) GetUser(ctx context.Context, id int) (*entities.User, error) {
@@ -37,8 +37,8 @@ func (u *UserInteractor) GetRangeUsers(ctx context.Context, start_id int, end_id
 	return u.OutputPort.OutputUsers(ctx, users, nil)
 }
 
-func (u *UserInteractor) GetUsers(ctx context.Context, id ...int) (*entities.Users, error) {
-	users, err := u.Repository.GetUsers(ctx, id...)
+func (u *UserInteractor) GetUsers(ctx context.Context, ids ...int) (*entities.Users, error) {
+	users, err := u.Repository.GetUsers(ctx, ids...)
 	if err != nil {
 		return u.OutputPort.OutputUsers(ctx, nil, err)
 	}

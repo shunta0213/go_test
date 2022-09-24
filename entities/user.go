@@ -17,9 +17,10 @@ type User struct {
 	CreatedAt time.Time `json:"created_at"`
 	DeletedAt time.Time `json:"deleted_at"`
 	UpdatedAt time.Time `json:"updated_at"`
-	// For Future
-	// Desc         string    `json:"desc"`
-	// Tags         []string  `json:"tags"`
-	// Progress     int       `json:"progress"`
-	// Organization bool      `json:"organization"`
 }
+
+// For Future
+// Desc         string    `json:"desc"`
+// Tags         []string  `json:"tags"`
+// Progress     int       `json:"progress"`
+// Organization bool      `json:"organization"`
