@@ -13,6 +13,12 @@ import (
 	"github.com/volatiletech/sqlboiler/v4/queries/qm"
 )
 
+/*
+This contains Database information which is in the infra layer,
+so this breaks dependency inversion principal.
+To solve this problem, Add sql handler to this gateways (adaptors) layer.
+*/
+
 type UserGateway struct {
 	database.SqlHandler
 }
@@ -103,6 +109,25 @@ func (gateways *UserGateway) GetRangeUsers(ctx context.Context, start_id int, en
 	users, err := models.Users(
 		qm.Where(query),
 	).All(ctx, gateways.Conn)
+
+	if err != nil {
+		return nil, err
+	}
+
+	if users == nil {
+		users = []*models.User{}
+	}
+
+	return users, nil
+}
+
+/*
+When you get all users
+*/
+
+func (gateways *UserGateway) GetAllUser(ctx context.Context) ([]*models.User, error) {
+
+	users, err := models.Users().All(ctx, gateways.Conn)
 
 	if err != nil {
 		return nil, err

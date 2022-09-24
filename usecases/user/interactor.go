@@ -44,3 +44,12 @@ func (u *UserInteractor) GetUsers(ctx context.Context, ids ...int) (*entities.Us
 	}
 	return u.OutputPort.OutputUsers(ctx, users, nil)
 }
+
+func (u *UserInteractor) GetAllUser(ctx context.Context) (*entities.Users, error) {
+	users, err := u.Repository.GetAllUser(ctx)
+	if err != nil {
+		return u.OutputPort.OutputUsers(ctx, nil, err)
+	}
+
+	return u.OutputPort.OutputUsers(ctx, users, nil)
+}
