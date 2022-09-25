@@ -25,7 +25,3 @@ func init() {
 
 	Router = router
 }
-
-type Input struct {
-	Name string `json:"name"`
-}
