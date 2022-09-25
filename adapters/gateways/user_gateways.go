@@ -29,9 +29,13 @@ When create user
 func (gateway *UserGateway) AddUser(ctx context.Context, user *entities.User) (*models.User, error) {
 
 	u := models.User{}
-	copier.Copy(&u, user)
+	err := copier.Copy(&u, user)
 
-	err := u.Insert(ctx, gateway.Conn, boil.Infer())
+	if err != nil {
+		return nil, err
+	}
+
+	err = u.Insert(ctx, gateway.Conn, boil.Infer())
 
 	if err != nil {
 		return nil, err
