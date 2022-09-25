@@ -5,4 +5,4 @@ down:
 	docker-compose down
 
 start:
-	go mod tidy
+	go run .
