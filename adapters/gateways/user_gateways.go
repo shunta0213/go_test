@@ -45,7 +45,7 @@ func (gateway *UserGateway) AddUser(ctx context.Context, user *entities.User) (*
 }
 
 /*
-When you get a user
+When you get a user by ID
 */
 func (gateway *UserGateway) GetUser(ctx context.Context, id int) (*models.User, error) {
 
