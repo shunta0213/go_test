@@ -7,10 +7,10 @@ import (
 	"testing"
 
 	"github.com/DATA-DOG/go-sqlmock"
-	"github.com/go-playground/assert/v2"
 	"github.com/shunta0213/go_test/adapters/gateways"
 	"github.com/shunta0213/go_test/entities"
 	"github.com/shunta0213/go_test/infrastructures/database"
+	"github.com/stretchr/testify/assert"
 )
 
 func newDummySqlHandler(db *sql.DB) database.SqlHandler {
@@ -30,10 +30,10 @@ func TestGetUser(t *testing.T) {
 		err      error
 	}{
 		{
-			"getUser",
-			20,
+			"GetUserById1",
+			1,
 			entities.User{
-				Id:        20,
+				Id:        1,
 				Username:  "User",
 				Firstname: "first",
 				Lastname:  "last",
@@ -58,7 +58,7 @@ func TestGetUser(t *testing.T) {
 		SqlHandler: newDummySqlHandler(db),
 	}
 
-	query := "SELECT * from users WHERE id=?"
+	query := "SELECT * FROM users WHERE id=?"
 
 	for _, tt := range table {
 		t.Run(tt.testName, func(t *testing.T) {
@@ -70,7 +70,7 @@ func TestGetUser(t *testing.T) {
 			}).AddRow(b.Id, b.Username, b.Firstname, b.Lastname, b.Email, b.Contact)
 
 			// ExpectQuery mocks the combination of expected SELECT statement and retrieved result.
-			mock.ExpectQuery(regexp.QuoteMeta(query)).WithArgs(tt.id).WillReturnRows(rows)
+			mock.ExpectQuery(regexp.QuoteMeta(query)).WithArgs(1, tt.id).WillReturnRows(rows)
 
 			got, err := repo.GetUser(context.TODO(), b.Id)
 
