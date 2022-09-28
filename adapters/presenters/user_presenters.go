@@ -22,7 +22,6 @@ func (u *UserPresenter) OutPutUser(ctx context.Context, user *models.User, err e
 	return entities_user, err
 }
 
-// Im not sure this works.
 func (u *UserPresenter) OutputUsers(ctx context.Context, users []*models.User, err error) (*entities.Users, error) {
 	entities_users := &entities.Users{}
 	copier.Copy(entities_users, users)
