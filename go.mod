@@ -3,7 +3,9 @@ module github.com/shunta0213/go_test
 go 1.19
 
 require (
+	github.com/DATA-DOG/go-sqlmock v1.4.1
 	github.com/friendsofgo/errors v0.9.2
+	github.com/go-playground/assert/v2 v2.0.1
 	github.com/joho/godotenv v1.4.0
 	github.com/kat-co/vala v0.0.0-20170210184112-42e1d8b61f12
 	github.com/lib/pq v1.10.7
