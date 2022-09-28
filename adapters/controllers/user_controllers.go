@@ -30,7 +30,7 @@ func NewUserController(sqlHandler database.SqlHandler) *UserController {
 func (controller *UserController) AddUser(ctx context.Context, c GinContext) {
 	u := entities.User{}
 	c.Bind(&u)
-	user, err := controller.Interactor.AddUser(ctx, &u)
+	user, err := controller.Interactor.Repository.AddUser(ctx, &u)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, err)
 		return
