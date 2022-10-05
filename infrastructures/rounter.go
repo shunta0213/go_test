@@ -4,8 +4,8 @@ import (
 	"context"
 
 	"github.com/gin-gonic/gin"
-	"github.com/shunta0213/go_test/adapters/controllers"
-	"github.com/shunta0213/go_test/infrastructures/database"
+	"github.com/shunta0213/test_go_restapi/adapters/controllers"
+	"github.com/shunta0213/test_go_restapi/infrastructures/database"
 )
 
 var Router *gin.Engine

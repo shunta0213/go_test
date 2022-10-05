@@ -1,4 +1,4 @@
-module github.com/shunta0213/go_test
+module github.com/shunta0213/test_go_restapi
 
 go 1.19
 

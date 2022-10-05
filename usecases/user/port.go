@@ -3,8 +3,8 @@ package user
 import (
 	"context"
 
-	"github.com/shunta0213/go_test/entities"
-	"github.com/shunta0213/go_test/models"
+	"github.com/shunta0213/test_go_restapi/entities"
+	"github.com/shunta0213/test_go_restapi/models"
 )
 
 /*

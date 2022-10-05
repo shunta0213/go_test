@@ -8,9 +8,9 @@ import (
 
 	"github.com/DATA-DOG/go-sqlmock"
 	"github.com/go-playground/assert/v2"
-	"github.com/shunta0213/go_test/adapters/gateways"
-	"github.com/shunta0213/go_test/entities"
-	"github.com/shunta0213/go_test/infrastructures/database"
+	"github.com/shunta0213/test_go_restapi/adapters/gateways"
+	"github.com/shunta0213/test_go_restapi/entities"
+	"github.com/shunta0213/test_go_restapi/infrastructures/database"
 )
 
 func newDummySqlHandler(db *sql.DB) database.SqlHandler {

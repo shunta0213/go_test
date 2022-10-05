@@ -5,11 +5,11 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/shunta0213/go_test/adapters/gateways"
-	"github.com/shunta0213/go_test/adapters/presenters"
-	"github.com/shunta0213/go_test/entities"
-	"github.com/shunta0213/go_test/infrastructures/database"
-	"github.com/shunta0213/go_test/usecases/user"
+	"github.com/shunta0213/test_go_restapi/adapters/gateways"
+	"github.com/shunta0213/test_go_restapi/adapters/presenters"
+	"github.com/shunta0213/test_go_restapi/entities"
+	"github.com/shunta0213/test_go_restapi/infrastructures/database"
+	"github.com/shunta0213/test_go_restapi/usecases/user"
 )
 
 type UserController struct {

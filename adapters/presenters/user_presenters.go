@@ -4,8 +4,8 @@ import (
 	"context"
 
 	"github.com/jinzhu/copier"
-	"github.com/shunta0213/go_test/entities"
-	"github.com/shunta0213/go_test/models"
+	"github.com/shunta0213/test_go_restapi/entities"
+	"github.com/shunta0213/test_go_restapi/models"
 )
 
 type UserPresenter struct{}

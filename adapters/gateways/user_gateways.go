@@ -5,10 +5,9 @@ import (
 	"strconv"
 
 	"github.com/jinzhu/copier"
-
-	"github.com/shunta0213/go_test/entities"
-	"github.com/shunta0213/go_test/infrastructures/database"
-	"github.com/shunta0213/go_test/models"
+	"github.com/shunta0213/test_go_restapi/entities"
+	"github.com/shunta0213/test_go_restapi/infrastructures/database"
+	"github.com/shunta0213/test_go_restapi/models"
 	"github.com/volatiletech/sqlboiler/v4/boil"
 	"github.com/volatiletech/sqlboiler/v4/queries/qm"
 )
